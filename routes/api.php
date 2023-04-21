@@ -10,6 +10,11 @@ use App\Models\Entry;
 use App\Models\Job;
 use App\Models\Skill;
 
+use App\Models\Study;
+
+use App\Models\Link;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +55,19 @@ Route::get('/skills', function(){
 
     $skills = Skill::orderBy('id')->get();
     return $skills;
+
+});
+
+Route::get('/studies', function(){
+
+    $studies = Study::orderBy('id')->get();
+    return $studies;
+
+});
+Route::get('/links', function(){
+
+    $links = Link::orderBy('id')->get();
+    return $links;
 
 });
 

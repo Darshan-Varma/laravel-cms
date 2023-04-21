@@ -9,6 +9,10 @@ use App\Models\Entry;
 use App\Models\Topic;
 use App\Models\Job;
 use App\Models\Skill;
+use App\Models\Link;
+use App\Models\Study;
+
+
 
 use Illuminate\Database\Seeder;
 
@@ -29,6 +33,8 @@ class DatabaseSeeder extends Seeder
         Topic::truncate();
         Job::truncate();
         Skill::truncate();
+        Link::truncate();
+        Study::truncate();
         
         User::factory()->count(2)->create();
         Type::factory()->count(3)->create();
@@ -38,5 +44,7 @@ class DatabaseSeeder extends Seeder
             
         Entry::factory()->count(4)->create();
         Job::factory()->count(4)->create();
+        Link::factory()->count(4)->create();
+        Study::factory()->count(4)->create();
     }
 }

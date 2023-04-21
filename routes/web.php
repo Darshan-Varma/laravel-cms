@@ -9,6 +9,8 @@ use App\Http\Controllers\EntriesController;
 use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\StudiesController;
+use App\Http\Controllers\LinksController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -91,3 +93,17 @@ Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware
 Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('skill', '[0-9]+')->middleware('auth');
 Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('skill', '[0-9]+')->middleware('auth');
 Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('skill', '[0-9]+')->middleware('auth');
+
+Route::get('/console/studies/list', [StudiesController::class, 'list'])->middleware('auth');
+Route::get('/console/studies/add', [StudiesController::class, 'addForm'])->middleware('auth');
+Route::post('/console/studies/add', [StudiesController::class, 'add'])->middleware('auth');
+Route::get('/console/studies/edit/{study:id}', [StudiesController::class, 'editForm'])->where('study', '[0-9]+')->middleware('auth');
+Route::post('/console/studies/edit/{study:id}', [StudiesController::class, 'edit'])->where('study', '[0-9]+')->middleware('auth');
+Route::get('/console/studies/delete/{study:id}', [StudiesController::class, 'delete'])->where('study', '[0-9]+')->middleware('auth');
+
+Route::get('/console/links/list', [LinksController::class, 'list'])->middleware('auth');
+Route::get('/console/links/add', [LinksController::class, 'addForm'])->middleware('auth');
+Route::post('/console/links/add', [LinksController::class, 'add'])->middleware('auth');
+Route::get('/console/links/edit/{link:id}', [LinksController::class, 'editForm'])->where('link', '[0-9]+')->middleware('auth');
+Route::post('/console/links/edit/{link:id}', [LinksController::class, 'edit'])->where('link', '[0-9]+')->middleware('auth');
+Route::get('/console/links/delete/{link:id}', [LinksController::class, 'delete'])->where('link', '[0-9]+')->middleware('auth');
